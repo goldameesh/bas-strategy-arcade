@@ -23,6 +23,13 @@ export interface GameEvent {
     scenarioId: string;
     decision: string;
     outcome: string;
+    analysis: {
+        what: string;
+        when: string;
+        why: string;
+        how: string;
+        who: string;
+    };
     impact: {
         marketShare?: number;
         revenue?: number;
@@ -46,5 +53,12 @@ export interface Scenario {
         label: string;
         riskLevel: 'low' | 'medium' | 'high';
         archetypeAlignment: StrategyArchetype[];
+        analysis: {
+            what: string;
+            when: string;
+            why: string;
+            how: string;
+            who: string;
+        };
     }[];
 }

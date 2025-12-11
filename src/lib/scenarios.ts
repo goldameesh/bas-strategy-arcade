@@ -15,19 +15,40 @@ export const scenarios: Scenario[] = [
                 id: 'aggressive',
                 label: 'Attack the Narrative',
                 riskLevel: 'high',
-                archetypeAlignment: ['aggressive-growth', 'innovation-disruption']
+                archetypeAlignment: ['aggressive-growth', 'innovation-disruption'],
+                analysis: {
+                    what: "Seize control of the public narrative immediately.",
+                    when: "Immediate action required (within 2 hours).",
+                    why: "In a vacuum of information, rumors become facts. Aggressive transparency kills speculation.",
+                    how: "Press conference + social media blitz. Frame the departure as a 'strategic refresh'.",
+                    who: "CEO / Manager directly. No spokespersons."
+                }
             },
             {
                 id: 'defensive',
                 label: 'Secure the Fort',
                 riskLevel: 'low',
-                archetypeAlignment: ['defensive-consolidation', 'cost-leadership']
+                archetypeAlignment: ['defensive-consolidation', 'cost-leadership'],
+                analysis: {
+                    what: "Internal stabilization and asset protection.",
+                    when: "Over the next 48 hours.",
+                    why: "Preserving team morale is more valuable than winning the PR war.",
+                    how: "Closed-door meetings with key stakeholders. Secure backup options quietly.",
+                    who: "HR Director / Team Captain."
+                }
             },
             {
                 id: 'pivot',
                 label: 'Strategic Pivot',
                 riskLevel: 'medium',
-                archetypeAlignment: ['turnaround', 'market-expansion']
+                archetypeAlignment: ['turnaround', 'market-expansion'],
+                analysis: {
+                    what: "Use the crisis to accelerate a tactical shift.",
+                    when: "Immediate announcement of new direction.",
+                    why: "A crisis is a terrible thing to waste. Use the disruption to break legacy patterns.",
+                    how: "Announce a new 'Youth First' or 'Tech First' strategy that makes the lost asset irrelevant.",
+                    who: "Strategy Director."
+                }
             }
         ]
     },
@@ -45,19 +66,40 @@ export const scenarios: Scenario[] = [
                 id: 'comply',
                 label: 'Full Compliance & Adaptation',
                 riskLevel: 'low',
-                archetypeAlignment: ['sustainability-esg', 'defensive-consolidation']
+                archetypeAlignment: ['sustainability-esg', 'defensive-consolidation'],
+                analysis: {
+                    what: "Immediate and total adherence to new standards.",
+                    when: "Effective immediately.",
+                    why: "Regulatory friction destroys long-term value. Compliance builds institutional trust.",
+                    how: "Audit all systems. Retrain staff. Publicly endorse the new rules.",
+                    who: "Compliance Officer."
+                }
             },
             {
                 id: 'innovate',
                 label: 'Find the Loophole',
                 riskLevel: 'high',
-                archetypeAlignment: ['innovation-disruption', 'aggressive-growth']
+                archetypeAlignment: ['innovation-disruption', 'aggressive-growth'],
+                analysis: {
+                    what: "Exploit the grey areas of the new regulation.",
+                    when: "During the transition period.",
+                    why: "Rules are often imperfectly written. First-mover advantage goes to those who read the fine print.",
+                    how: "Legal deep dive. Creative accounting / technical adjustments.",
+                    who: "Legal Counsel / Technical Director."
+                }
             },
             {
                 id: 'transform',
                 label: 'Rebuild the System',
                 riskLevel: 'medium',
-                archetypeAlignment: ['ai-transformation', 'turnaround']
+                archetypeAlignment: ['ai-transformation', 'turnaround'],
+                analysis: {
+                    what: "Overhaul the business model to make the regulation irrelevant.",
+                    when: "Medium term (3-6 months).",
+                    why: "Don't just survive the rule change; evolve beyond it.",
+                    how: "Invest in automation or new revenue streams that aren't subject to the cap.",
+                    who: "Chief Transformation Officer."
+                }
             }
         ]
     },
@@ -75,19 +117,40 @@ export const scenarios: Scenario[] = [
                 id: 'adopt',
                 label: 'Embrace the Tech',
                 riskLevel: 'medium',
-                archetypeAlignment: ['ai-transformation', 'innovation-disruption']
+                archetypeAlignment: ['ai-transformation', 'innovation-disruption'],
+                analysis: {
+                    what: "Counter-invest in superior AI capabilities.",
+                    when: "Immediate procurement.",
+                    why: "In an arms race, parity is the minimum requirement for survival.",
+                    how: "Partner with a tech firm. Hire data scientists.",
+                    who: "CTO / Data Head."
+                }
             },
             {
                 id: 'human',
                 label: 'Trust Instinct & Experience',
                 riskLevel: 'high',
-                archetypeAlignment: ['cost-leadership', 'turnaround']
+                archetypeAlignment: ['cost-leadership', 'turnaround'],
+                analysis: {
+                    what: "Double down on human intuition and unpredictability.",
+                    when: "Ongoing.",
+                    why: "AI models train on past data. They struggle with true novelty and chaos.",
+                    how: "Encourage creative freedom. Remove rigid tactical structures.",
+                    who: "Head Coach / Creative Director."
+                }
             },
             {
                 id: 'partner',
                 label: 'Acquire Capability',
                 riskLevel: 'low',
-                archetypeAlignment: ['ma-alliance', 'market-expansion']
+                archetypeAlignment: ['ma-alliance', 'market-expansion'],
+                analysis: {
+                    what: "Buy the competitor or a similar tech provider.",
+                    when: "As soon as due diligence allows.",
+                    why: "If you can't build it, buy it. Speed to market is critical.",
+                    how: "M&A activity. Strategic alliance.",
+                    who: "Head of M&A."
+                }
             }
         ]
     }

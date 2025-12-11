@@ -42,6 +42,7 @@ export default function GameEngine() {
             outcome: isAligned
                 ? "Your strategic consistency paid off. Stakeholders are aligned."
                 : "The decision caused friction with your stated strategy.",
+            analysis: selectedOption.analysis,
             impact: {
                 reputation: isAligned ? 10 : -5
             },

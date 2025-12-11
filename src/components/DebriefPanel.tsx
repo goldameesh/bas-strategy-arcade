@@ -1,9 +1,10 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle, BarChart2, RefreshCw, Share2 } from 'lucide-react';
+import { CheckCircle, BarChart2, RefreshCw, Share2, Info } from 'lucide-react';
 import { Sport, StrategyArchetype, GameEvent } from '@/types/game';
+import ShareModal from './ShareModal';
 
 interface DebriefPanelProps {
     sport: Sport;
@@ -20,8 +21,17 @@ export default function DebriefPanel({
     score,
     onRestart
 }: DebriefPanelProps) {
+    const [showShare, setShowShare] = useState(false);
+
     return (
         <div className="w-full max-w-5xl mx-auto px-4 py-12">
+            <ShareModal
+                isOpen={showShare}
+                onClose={() => setShowShare(false)}
+                score={score}
+                strategy={strategy}
+            />
+
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -69,21 +79,52 @@ export default function DebriefPanel({
                         Decision Analysis
                     </h3>
 
-                    <div className="space-y-4">
+                    <div className="space-y-6">
                         {history.map((event, index) => (
-                            <div key={index} className="flex items-start gap-4 p-4 rounded-lg bg-white/5 border border-white/10">
-                                <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0 text-blue-400 font-bold text-sm">
-                                    {index + 1}
+                            <div key={index} className="p-6 rounded-xl bg-white/5 border border-white/10">
+                                <div className="flex items-start gap-4 mb-4">
+                                    <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0 text-blue-400 font-bold text-sm">
+                                        {index + 1}
+                                    </div>
+                                    <div>
+                                        <h4 className="text-white font-bold text-lg mb-1">
+                                            Scenario {index + 1}: {event.decision}
+                                        </h4>
+                                        <p className="text-gray-400 text-sm">
+                                            {event.outcome}
+                                        </p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h4 className="text-white font-medium mb-1">
-                                        Scenario {index + 1} Decision
-                                    </h4>
-                                    <p className="text-gray-400 text-sm">
-                                        You chose to <span className="text-gold">{event.decision}</span>.
-                                        This resulted in <span className="text-white">{event.outcome}</span>.
-                                    </p>
-                                </div>
+
+                                {/* Deep 5W Analysis */}
+                                {event.analysis && (
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 pt-4 border-t border-white/5 text-sm">
+                                        <div className="space-y-2">
+                                            <div className="flex gap-2">
+                                                <span className="text-gold font-bold w-12">WHAT:</span>
+                                                <span className="text-gray-300">{event.analysis.what}</span>
+                                            </div>
+                                            <div className="flex gap-2">
+                                                <span className="text-gold font-bold w-12">WHY:</span>
+                                                <span className="text-gray-300">{event.analysis.why}</span>
+                                            </div>
+                                            <div className="flex gap-2">
+                                                <span className="text-gold font-bold w-12">WHO:</span>
+                                                <span className="text-gray-300">{event.analysis.who}</span>
+                                            </div>
+                                        </div>
+                                        <div className="space-y-2">
+                                            <div className="flex gap-2">
+                                                <span className="text-gold font-bold w-12">WHEN:</span>
+                                                <span className="text-gray-300">{event.analysis.when}</span>
+                                            </div>
+                                            <div className="flex gap-2">
+                                                <span className="text-gold font-bold w-12">HOW:</span>
+                                                <span className="text-gray-300">{event.analysis.how}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
                             </div>
                         ))}
                     </div>
@@ -104,7 +145,10 @@ export default function DebriefPanel({
                     Play Again
                 </button>
 
-                <button className="px-8 py-3 rounded-xl bg-gold hover:bg-amber-400 text-black font-bold flex items-center gap-2 transition-all shadow-lg shadow-gold/20">
+                <button
+                    onClick={() => setShowShare(true)}
+                    className="px-8 py-3 rounded-xl bg-gold hover:bg-amber-400 text-black font-bold flex items-center gap-2 transition-all shadow-lg shadow-gold/20"
+                >
                     <Share2 className="w-5 h-5" />
                     Share Results
                 </button>
