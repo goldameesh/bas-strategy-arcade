@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --color-royal-blue: #1E3A8A;
+  --color-royal-blue-light: #2563EB;
+  --color-gold: #D4AF37;
+  --color-gold-light: #FCD34D;
+  --color-platinum: #E5E4E2;
+  --color-platinum-light: #F3F4F6;
+  --color-deep-bg: #020617;
+  
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  --background: #020617;
+  --foreground: #E5E4E2;
+  
+  --card: rgba(30, 58, 138, 0.2);
+  --card-foreground: #E5E4E2;
+  
+  --popover: #020617;
+  --popover-foreground: #E5E4E2;
+  
+  --primary: #D4AF37;
+  --primary-foreground: #020617;
+  
+  --secondary: #1E3A8A;
+  --secondary-foreground: #E5E4E2;
+  
+  --muted: rgba(229, 228, 226, 0.1);
+  --muted-foreground: #9CA3AF;
+  
+  --accent: #D4AF37;
+  --accent-foreground: #020617;
+  
+  --destructive: #EF4444;
+  --destructive-foreground: #E5E4E2;
+  
+  --border: rgba(212, 175, 55, 0.2);
+  --input: rgba(30, 58, 138, 0.3);
+  --ring: #D4AF37;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Premium Glassmorphism */
+.glass-panel {
+  background: rgba(30, 58, 138, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.gold-glow {
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(to right, #D4AF37, #FCD34D, #D4AF37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E3A8A;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
