@@ -108,24 +108,21 @@ export default function ScenarioSimulator({
                 </div>
 
                 {/* Action Button */}
-                <AnimatePresence>
-                    {selectedOption && (
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: 10 }}
-                            className="mt-8 flex justify-end"
+                {selectedOption && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="mt-8 flex justify-end"
+                    >
+                        <button
+                            onClick={() => onDecision(selectedOption)}
+                            className="px-8 py-4 rounded-xl bg-gradient-to-r from-gold to-amber-500 text-black font-bold text-lg shadow-lg hover:shadow-gold/20 hover:scale-105 transition-all duration-300 flex items-center gap-2"
                         >
-                            <button
-                                onClick={() => onDecision(selectedOption)}
-                                className="px-8 py-4 rounded-xl bg-gradient-to-r from-gold to-amber-500 text-black font-bold text-lg shadow-lg hover:shadow-gold/20 hover:scale-105 transition-all duration-300 flex items-center gap-2"
-                            >
-                                EXECUTE DECISION
-                                <ArrowRight className="w-5 h-5" />
-                            </button>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
+                            EXECUTE DECISION
+                            <ArrowRight className="w-5 h-5" />
+                        </button>
+                    </motion.div>
+                )}
             </motion.div>
         </div>
     );
